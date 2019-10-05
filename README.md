@@ -1,8 +1,10 @@
 # svelte-fluid-header
 
+##### Work in Progress
+
 `svelte-fluid-header` is a responsive and customizable header component for [Svelte](https://svelte.dev/).
 
-On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, use a collapsible vertical menu below your header.
+On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, use a collapsible vertical menu below the header.
 
 ## Install
 
@@ -77,7 +79,7 @@ The default is `div`.
 
 Slots give you control of your content and your style.
 
-To style the wrapper element and the default button of a `svelte-fluid-header` component, there are two classes that you can hook into: `fluid-header-container` and `fluid-header-button`;
+To style the container element of the header, you can hook into the `fluid-header-container` class. To style the default button, there is `fluid-header-button`;
 
 ```html
 <style>
