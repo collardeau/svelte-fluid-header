@@ -4,7 +4,7 @@ Work In Progress!
 
 `svelte-fluid-header` is a responsive and customizable header bar component for [Svelte](https://svelte.dev/).
 
-On **smaller screens**, the right side of the header shows a hamburger button which clicks to reveal a drawer of content (vertical menu) below. On **larger screens**, the hamburger button is hidden and a horizontal menu is put in its place.
+On **smaller screens**, the right side of the header displays a hamburger button which clicks to reveal a drawer of content below (for vertical menu). On **larger screens**, the hamburger button is replaced by another slotted content (for horizontal menu).
 
 ## Install
 
@@ -33,19 +33,19 @@ On **smaller screens**, the right side of the header shows a hamburger button wh
 
 ## Slots
 
-### left
+### `left`
 
 The `left` slot goes into the left side of the header, usually a logo and/or page title.
 
-### right
+### `right`
 
-The `right` slot goes into the right side of the header on large screens, usually a list of horizontal links.
+The `right` slot goes into the right side of the header (on large screens), usually a list of horizontal links.
 
-### drawer
+### `drawer`
 
 The `drawer` slot goes into the section below the header. It is hidden and can be toggled, usually to reveal a list a vertical list of links.
 
-### right-collapsed (optional)
+### `right-collapsed` (optional)
 
 The `right-collapsed` slot replaces the `right` slot on smaller screen, usually for a button to open or close the drawer below. It is optional because you can leave it out and you get default hamburger and close buttons, which are customizable.
 
