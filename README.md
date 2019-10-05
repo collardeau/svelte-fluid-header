@@ -1,10 +1,10 @@
 # svelte-fluid-header
 
-A [Svelte](https://svelte.dev/) component. `svelte-fluid-header` is a responsive and customizable header bar.
+A [Svelte](https://svelte.dev/) component.
 
-On **smaller screens**, a button is displayed on the right side of the header and clicks to reveal a drawer below (for a vertical menu).
+`svelte-fluid-header` is a responsive and customizable header bar.
 
-On **larger screens**, the button is replaced by a slot element (for a horizontal menu).
+On **smaller screens**, use a horizontal menu in your header. On **larger screens**, use a collapsible vertical menu below the header.
 
 ## Install
 
