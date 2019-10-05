@@ -1,4 +1,5 @@
 <script>
+  import "./main.css";
   import { createEventDispatcher } from "svelte";
   import { slide } from "svelte/transition";
   import Wrap from "./Wrap.svelte";
