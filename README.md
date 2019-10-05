@@ -4,7 +4,9 @@ Work In Progress!
 
 `svelte-fluid-header` is a responsive and customizable header bar component for [Svelte](https://svelte.dev/).
 
-On **smaller screens**, the right side of the header displays a hamburger button which clicks to reveal a drawer of content below (for vertical menu). On **larger screens**, the hamburger button is replaced by another slotted content (for horizontal menu).
+On **smaller screens**, the right side of the header displays a hamburger button which clicks to reveal a drawer of content below (for a vertical menu).
+
+On **larger screens**, the hamburger button is replaced by another slotted content (for a horizontal menu).
 
 ## Install
 
@@ -39,29 +41,29 @@ The `left` slot goes into the left side of the header, usually a logo and/or pag
 
 ### `right`
 
-The `right` slot goes into the right side of the header (on large screens), usually a list of horizontal links.
+The `right` slot goes into the right side of the header (on larger screens), usually a list of horizontal links.
 
 ### `drawer`
 
-The `drawer` slot goes into the section below the header. It is hidden and can be toggled, usually to reveal a vertical list of links.
+The `drawer` slot goes into the section below the header (for larger screens). It is hidden and can be toggled, usually to reveal a vertical list of links.
 
 ### `right-collapsed` (optional)
 
-The `right-collapsed` slot replaces the `right` slot on smaller screen, usually for a button to open or close the drawer below. It is optional because you can leave it out and you get default hamburger and close buttons, which are customizable.
+The `right-collapsed` slot replaces the `right` slot on smaller screens, usually for a button to open or close the drawer below. It is optional as you can leave it out and you get default hamburger and close buttons, which are customizable. However you can replace the default and place whatever you want in the slot.
 
 ## Props
 
 ### `bp`
 
-The breakpoint at which the hamburger button and drawer are hidden. Values are `sm`, `md`, `lg`, `xl`. Default is `sm`.
+The breakpoint at which the hamburger button and drawer are hidden. Values are `sm` (640px), `md`(768px), `lg`(1024px), `xl`(1200px). Default is `sm`.
 
 ### `duration`
 
-The duration of the drawer slider effect in milliseconds. The default is `200`.
+The duration of the drawer slider effect in milliseconds. The default is `300`.
 
 ### `as`
 
-The HTML tag that wraps the component. Valid values are `header`, `section`, `div`. The default is `div`.
+The HTML tag that wraps the component. Possible values are `header`, `section`, `div`. The default is `div`.
 
 ## Custom Styling
 
