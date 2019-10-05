@@ -1,8 +1,6 @@
 # svelte-fluid-header
 
-A [Svelte](https://svelte.dev/) component.
-
-`svelte-fluid-header` is a responsive and customizable header bar.
+`svelte-fluid-header` is a responsive and customizable header component for [Svelte](https://svelte.dev/).
 
 On **smaller screens**, use a horizontal menu in your header. On **larger screens**, use a collapsible vertical menu below the header.
 
