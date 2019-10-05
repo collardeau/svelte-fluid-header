@@ -28,7 +28,7 @@ module.exports = {
         "xl:justify-between",
         "xl:items-center"
       ],
-      content: ["./**/*.svelte"],
+      content: ["./**/*.html", "./**/*.svelte"],
       defaultExtractor: extractor
     })
   ]
