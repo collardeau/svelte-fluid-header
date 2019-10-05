@@ -55,17 +55,23 @@ The `right-collapsed` slot replaces the `right` slot on smaller screens, usually
 
 ### `bp`
 
-The breakpoint at which the hamburger button and drawer are hidden. Values are `sm` (640px), `md`(768px), `lg`(1024px), `xl`(1200px). Default is `sm`.
+The breakpoint at which the `right-collapsed` and `drawer` slots are hidden, and the `right` slot is displayed.
+Possible values are `sm` (640px), `md`(768px), `lg`(1024px), `xl`(1200px). Default is `sm`.
 
 ### `duration`
 
-The duration of the drawer slider effect in milliseconds. The default is `300`.
+The duration of the drawer slider animation in milliseconds.
+The default is `300`.
 
 ### `as`
 
-The HTML tag that wraps the component. Possible values are `header`, `section`, `div`. The default is `div`.
+The HTML tag that wraps the component.
+Possible values are `header`, `section`, `div`.
+The default is `div`.
 
-## Custom Styling
+## Styling
+
+You have two classes that you can hook to style `svelte-fluid-header`: `fluid-header-container` and `fluid-header-button`;
 
 ```html
 <style>
@@ -73,15 +79,17 @@ The HTML tag that wraps the component. Possible values are `header`, `section`, 
     background-color: lightblue;
     padding: 10px;
   }
-  :global(.fluid-header-button:hover) {
+  :global(.fluid-header-button) {
     font-size: 1.1rem;
   }
 </style>
 ```
 
+You can replace the name of these classes with the `containerClass` and `defaultButtonClass` props;
+
 ## Events
 
-Events are emitted from the component
+Two events are emitted from the component.
 
 ### `open`
 
