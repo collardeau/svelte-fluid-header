@@ -43,7 +43,7 @@ The `right` slot goes into the right side of the header (on large screens), usua
 
 ### `drawer`
 
-The `drawer` slot goes into the section below the header. It is hidden and can be toggled, usually to reveal a list a vertical list of links.
+The `drawer` slot goes into the section below the header. It is hidden and can be toggled, usually to reveal a vertical list of links.
 
 ### `right-collapsed` (optional)
 
