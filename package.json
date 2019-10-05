@@ -1,5 +1,5 @@
 {
-  "name": "SvelteComponent",
+  "name": "svelte-fluid-header",
   "svelte": "src/index.svelte",
   "module": "index.mjs",
   "main": "index.js",
@@ -20,11 +20,26 @@
     "tailwindcss": "^1.1.2"
   },
   "keywords": [
-    "svelte"
+    "svelte",
+    "svelte-component",
+    "header",
+    "ui"
   ],
   "files": [
     "src",
     "index.mjs",
     "index.js"
-  ]
+  ],
+  "description": "A base for building shareable Svelte components that includes [tailwindcss](https://tailwindcss.com/). Clone it with [degit](https://github.com/Rich-Harris/degit):",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collardeau/svelte-fluid-header.git"
+  },
+  "author": "Thomas Collardeau (tomadeau@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/collardeau/svelte-fluid-header/issues"
+  },
+  "homepage": "https://github.com/collardeau/svelte-fluid-header#readme"
 }
