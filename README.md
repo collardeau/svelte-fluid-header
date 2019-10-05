@@ -1,10 +1,10 @@
 # svelte-fluid-header
 
-`svelte-fluid-header` is a responsive and customizable header bar component for [Svelte](https://svelte.dev/).
+A [Svelte](https://svelte.dev/) component. `svelte-fluid-header` is a responsive and customizable header bar.
 
-On **smaller screens**, the right side of the header displays a hamburger button which clicks to reveal a drawer of content below (for a vertical menu).
+On **smaller screens**, a button is displayed on the right side of the header and clicks to reveal a drawer below (for a vertical menu).
 
-On **larger screens**, the hamburger button is replaced by another slotted content (for a horizontal menu).
+On **larger screens**, the button is replaced by a slot element (for a horizontal menu).
 
 ## Install
 
@@ -27,7 +27,7 @@ On **larger screens**, the hamburger button is replaced by another slotted conte
    <div slot="drawer">
      My Vertical Menu
    </div>
-  </Header>
+</Header>
 
 ```
 
@@ -35,31 +35,37 @@ On **larger screens**, the hamburger button is replaced by another slotted conte
 
 #### `left`
 
-The `left` slot goes into the left side of the header, usually a logo and/or page title.
+The `left` slot goes into the left side of the header, usually for a logo and/or page title.
 
 #### `right`
 
-The `right` slot goes into the right side of the header (on larger screens), usually a list of horizontal links.
+On larger screens, the `right` slot goes into the right side of the header, usually for a horizontal menu.
 
 #### `drawer`
 
-The `drawer` slot goes into the section below the header (for larger screens). It is hidden and can be toggled, usually to reveal a vertical list of links.
+On smaller screens, the `drawer` slot goes into the section below the header. It is hidden and can be toggled (with a customizable animation). Here you can place a vertical menu.
 
 #### `right-collapsed` (optional)
 
-The `right-collapsed` slot replaces the `right` slot on smaller screens, usually for a button to open or close the drawer below. It is optional as you can leave it out and you get default hamburger and close buttons, which are customizable. However you can replace the default and place whatever you want in the slot.
+On smaller screens, the `right-collapsed` slot replaces the `right` slot. It is a good place for a button to open or close the drawer below. It is optional as `svelte-fluid-header` has a default slot with hamburger and close buttons (which you can further style). However you may place whatever you want in the slot. (see Bind section to create your own button.)
 
 ## Props
 
 #### `bp`
 
-The breakpoint at which the `right-collapsed` and `drawer` slots are hidden, and the `right` slot is displayed.
-Possible values are `sm` (640px), `md`(768px), `lg`(1024px), `xl`(1200px). Default is `sm`.
+The breakpoint at which the `right` slot is displayed, and the `right-collapsed` and `drawer` slots are hidden.
+Possible values are:
+ - `sm` (640px)
+ - `md`(768px),
+ - `lg`(1024px),
+ - `xl`(1200px).
+ 
+ The default value is `sm`.
 
 #### `duration`
 
 The duration of the drawer slider animation in milliseconds.
-The default is `300`.
+The default is `200`.
 
 #### `as`
 
@@ -136,20 +142,61 @@ You can bind to the `toggleDrawer` function of your `svelte-fluid-header` compon
 
 ```html
 <script>
-  let toggleMenu;
+  let toggleDrawer; // from component binding
   const handleClick = () => {
-    toggleMenu();
+    toggleDrawer();
   };
 </script>
 
-<Header bind:toggleMenu>
+<Header bind:toggleDrawer>
   <!-- other slots -->
   <div slot="right-collapsed">
     <button on:click={handleClick}>Toggle</button>
   </div>
 </Header>
 
-  
-  
 ```
 
+## Kitchen Sink
+
+All the options available:
+
+```html
+<script>
+  let toggleDrawer;
+  const handleClick = () => {
+    toggleMenu();
+  };
+  const onDrawerOpen = () => {
+    // do stuff
+  }
+  const onDrawerClose = () => {
+    // do stuff
+  }
+</script>
+
+<style>
+  :global(.fluid-header-container) {
+    background-color: lightblue;
+    padding: 10px;
+  }
+  :global(.fluid-header-button:hover) {
+    font-weight: bold;
+  }
+</style>
+
+<Header
+  as='header'
+  bind:toggleDrawer
+  on:open={onDrawerOpen}
+  on:close={onDrawerClose}>
+  <div slot="left">
+    <h1>My app</h1>
+  </div>
+  <div slot="right">My Horizontal Menu</div>
+  <div slot="drawer">My Vertical Menu</div>
+  <div slot="right-collapsed">
+    <button on:click={handleClick}>Toggle</button>
+  </div>
+</Header>
+```
