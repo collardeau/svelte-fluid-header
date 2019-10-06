@@ -4,7 +4,7 @@
 
 `svelte-fluid-header` is a responsive and customizable header component for [Svelte](https://svelte.dev/).
 
-On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, use a collapsible vertical menu below the header.
+On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, use a collapsible vertical menu.
 
 ## Install
 
