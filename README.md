@@ -132,7 +132,7 @@ When the drawer opens:
 
 #### `close`
 
-When the draw closes:
+When the drawer closes:
 
 ```html
 <Header
