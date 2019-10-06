@@ -2,7 +2,13 @@
 
 `svelte-fluid-header` is a **responsive** and **customizable** header component for [Svelte](https://svelte.dev/).
 
-On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, use a collapsible vertical menu below the header.
+On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, replace it for a collapsible vertical menu below the header.
+
+![](http://g.recordit.co/StDfeVYJRp.gif)
+
+# Demo
+
+[Example](https://xuyfx.csb.app/) -  [Code Sandbox](https://codesandbox.io/s/svelte-fluid-header-demo-xuyfx?view=preview)
 
 ## Install
 
@@ -39,13 +45,13 @@ The `left` slot goes into the left side of the header, usually for a logo and/or
 
 The `right` slot goes into the right side of the header, usually for a horizontal menu.
 
-It is hidden on smaller screens.
+*It is hidden on smaller screens.*
 
 #### `drawer`
 
 The `drawer` slot goes below the header, usually to place a vertical menu. It can be toggled into view (with a customizable animation).
 
-It is hidden on larger screens.
+*It is hidden on larger screens.*
 
 #### `right-collapsed` optional
 
@@ -53,7 +59,7 @@ The `right-collapsed` slot goes to the right of the header on smaller screens, u
 
 It is optional as `svelte-fluid-header` provides a default slot including hamburger and close buttons (which you can style). See the Bind section below to create a custom button.
 
-It is hidden on larger screens.
+*It is hidden on larger screens.*
 
 ## Props
 
