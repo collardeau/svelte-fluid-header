@@ -1,7 +1,5 @@
 # svelte-fluid-header
 
-##### Work in Progress
-
 `svelte-fluid-header` is a **responsive** and **customizable** header component for [Svelte](https://svelte.dev/).
 
 On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, use a collapsible vertical menu.
@@ -59,7 +57,7 @@ It is hidden on larger screens.
 
 ## Props
 
-#### `bp`
+#### `breakpoint`
 
 The breakpoint at which the `right` slot is displayed, and the `right-collapsed` and `drawer` slots are hidden.
 Possible values are:
@@ -197,6 +195,7 @@ All the options available:
 
 <Header
   as='header'
+  breakpoint='md'
   bind:toggleDrawer
   on:open={onDrawerOpen}
   on:close={onDrawerClose}>
