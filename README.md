@@ -1,8 +1,10 @@
 # svelte-fluid-header
 
-`svelte-fluid-header` is a responsive and customizable header component for [Svelte](https://svelte.dev/).
+##### Work in Progress
 
-On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, use a collapsible vertical menu below the header.
+`svelte-fluid-header` is a **responsive** and **customizable** header component for [Svelte](https://svelte.dev/).
+
+On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, use a collapsible vertical menu.
 
 ## Install
 
@@ -37,15 +39,23 @@ The `left` slot goes into the left side of the header, usually for a logo and/or
 
 #### `right`
 
-On larger screens, the `right` slot goes into the right side of the header, usually for a horizontal menu.
+The `right` slot goes into the right side of the header, usually for a horizontal menu.
+
+It is hidden on smaller screens.
 
 #### `drawer`
 
-On smaller screens, the `drawer` slot goes into the section below the header. It is hidden and can be toggled (with a customizable animation). Here you can place a vertical menu.
+The `drawer` slot goes below the header, usually to place a vertical menu. It can be toggled into view (with a customizable animation).
 
-#### `right-collapsed` (optional)
+It is hidden on larger screens.
 
-On smaller screens, the `right-collapsed` slot replaces the `right` slot. It is a good place for a button to open or close the drawer below. It is optional as `svelte-fluid-header` has a default slot with hamburger and close buttons (which you can further style). However you may place whatever you want in the slot. (see Bind section to create your own button.)
+#### `right-collapsed` optional
+
+The `right-collapsed` slot goes to the right of the header on smaller screens, usually for a hamburger button to reveal the drawer.
+
+It is optional as `svelte-fluid-header` provides a default slot including hamburger and close buttons (which you can style). See the Bind section below to create a custom button.
+
+It is hidden on larger screens.
 
 ## Props
 
@@ -73,7 +83,9 @@ The default is `div`.
 
 ## Styling
 
-Slots give you control of your content and your style. To style the wrapper element and the default button of a `svelte-fluid-header` component, there are two classes that you can hook into: `fluid-header-container` and `fluid-header-button`;
+Slots give you control of your content and your style.
+
+To style the container element of the header, you can hook into the `fluid-header-container` class. To style the default button, there is `fluid-header-button`;
 
 ```html
 <style>
@@ -140,7 +152,7 @@ You can bind to the `toggleDrawer` function of your `svelte-fluid-header` compon
 
 ```html
 <script>
-  let toggleDrawer; // from component binding
+  let toggleDrawer; // from bind below
   const handleClick = () => {
     toggleDrawer();
   };
@@ -163,7 +175,7 @@ All the options available:
 <script>
   let toggleDrawer;
   const handleClick = () => {
-    toggleMenu();
+    toggleDrawer();
   };
   const onDrawerOpen = () => {
     // do stuff
