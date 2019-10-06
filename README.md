@@ -196,6 +196,7 @@ All the options available:
 <Header
   as='header'
   breakpoint='md'
+  duration={250}
   bind:toggleDrawer
   on:open={ () => {} }
   on:close={ ()=> {} }>
