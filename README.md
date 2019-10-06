@@ -52,9 +52,10 @@ It is hidden on larger screens.
 #### `right-collapsed` optional
 
 The `right-collapsed` slot goes to the right of the header on smaller screens, usually for a hamburger button to reveal the drawer.
-It is hidden on larger screens.
 
 It is optional as `svelte-fluid-header` provides a default slot including hamburger and close buttons (which you can style). See the Bind section below to create a custom button.
+
+It is hidden on larger screens.
 
 ## Props
 
