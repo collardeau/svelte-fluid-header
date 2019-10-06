@@ -39,17 +39,22 @@ The `left` slot goes into the left side of the header, usually for a logo and/or
 
 #### `right`
 
-The `right` slot goes into the right side of the header, usually for a horizontal menu. It is hidden on smaller screens.
+The `right` slot goes into the right side of the header, usually for a horizontal menu.
+
+It is hidden on smaller screens.
 
 #### `drawer`
 
-The `drawer` slot goes below the header, usually to place a vertical menu. It can be toggled into view (with a customizable animation). It is hidden on larger screens.
+The `drawer` slot goes below the header, usually to place a vertical menu. It can be toggled into view (with a customizable animation).
+
+It is hidden on larger screens.
 
 #### `right-collapsed` optional
 
-The `right-collapsed` slot goes to the right of the header on smaller screens, usually for a hamburger button to reveal the drawer. It is hidden on larger screens.
+The `right-collapsed` slot goes to the right of the header on smaller screens, usually for a hamburger button to reveal the drawer.
+It is hidden on larger screens.
 
-It is optional as `svelte-fluid-header` provides a default slot including hamburger and close buttons (which you can style). See Bind section to create your own button and open the drawer.
+It is optional as `svelte-fluid-header` provides a default slot including hamburger and close buttons (which you can style). See the Bind section below to create a custom button.
 
 ## Props
 
