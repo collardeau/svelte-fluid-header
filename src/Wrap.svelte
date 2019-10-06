@@ -1,18 +1,18 @@
 <script>
   export let as = "div";
-  export let wrapperClass = "";
+  export let containerClass = "";
 </script>
 
 {#if as === 'header'}
-  <header class={wrapperClass}>
+  <header class={containerClass}>
     <slot />
   </header>
 {:else if as === 'section'}
-  <section class={wrapperClass}>
+  <section class={containerClass}>
     <slot />
   </section>
 {:else}
-  <div class={wrapperClass}>
+  <div class={containerClass}>
     <slot />
   </div>
 {/if}

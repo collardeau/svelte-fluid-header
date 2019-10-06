@@ -4,35 +4,40 @@
   import { slide } from "svelte/transition";
   import Wrap from "./Wrap.svelte";
   import DefaultButton from "./DefaultButton.svelte";
-  export let wrapperClass = "fluid-header-container";
+  import validate from "./validation";
+
+  export let containerClass = "fluid-header-container";
   export let defaultButtonClass = "fluid-header-button";
-  export let bp = "sm";
-  export let duration = 300;
+  export let breakpoint = "sm";
+  export let duration = 200;
   export let as = "header";
-  let navIsOpen = false;
+  export let drawerIsOpen = false;
 
   let dispatch = createEventDispatcher();
-  export let toggleMenu = () => {
-    dispatch(navIsOpen ? "close" : "open");
-    return (navIsOpen = !navIsOpen);
+  export let toggleDrawer = () => {
+    dispatch(drawerIsOpen ? "close" : "open");
+    return (drawerIsOpen = !drawerIsOpen);
   };
+
+  $: validate({ duration, as, breakpoint, containerClass, defaultButtonClass });
 </script>
 
-<Wrap {as} {wrapperClass}>
-  <div class="{bp}:flex {bp}:justify-between {bp}:items-center">
+<Wrap {as} {containerClass}>
+  <div
+    class="{breakpoint}:flex {breakpoint}:justify-between {breakpoint}:items-center">
     <div class="flex justify-between items-center">
       <slot name="left">left</slot>
-      <div class="{bp}:hidden">
+      <div class="{breakpoint}:hidden">
         <slot name="right-collapsed">
-          <DefaultButton {toggleMenu} {navIsOpen} {defaultButtonClass} />
+          <DefaultButton {toggleDrawer} {drawerIsOpen} {defaultButtonClass} />
         </slot>
       </div>
     </div>
-    <div class="hidden {bp}:block">
+    <div class="hidden {breakpoint}:block">
       <slot name="right">right</slot>
     </div>
-    {#if navIsOpen}
-      <div transition:slide={{ duration }} class="{bp}:hidden">
+    {#if drawerIsOpen}
+      <div transition:slide={{ duration }} class="{breakpoint}:hidden">
         <slot name="drawer">drawer</slot>
       </div>
     {/if}
