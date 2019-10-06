@@ -181,12 +181,6 @@ All the options available:
   const handleClick = () => {
     toggleDrawer();
   };
-  const onDrawerOpen = () => {
-    // do stuff
-  }
-  const onDrawerClose = () => {
-    // do stuff
-  }
 </script>
 
 <style>
@@ -203,11 +197,9 @@ All the options available:
   as='header'
   breakpoint='md'
   bind:toggleDrawer
-  on:open={onDrawerOpen}
-  on:close={onDrawerClose}>
-  <div slot="left">
-    <h1>My app</h1>
-  </div>
+  on:open={ () => {} }
+  on:close={ ()=> {} }>
+  <div slot="left"><h1>My app</h1></div>
   <div slot="right">My Horizontal Menu</div>
   <div slot="drawer">My Vertical Menu</div>
   <div slot="right-collapsed">
