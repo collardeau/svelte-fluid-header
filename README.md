@@ -2,13 +2,15 @@
 
 `svelte-fluid-header` is a **responsive** and **customizable** header component for [Svelte](https://svelte.dev/).
 
-On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, replace it for a collapsible vertical menu below the header.
+On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, replace it for a collapsible vertical menu.
+
+`svelte-fluid-header` has **no dependencies**.
 
 ![](http://g.recordit.co/StDfeVYJRp.gif)
 
 # Demo
 
-[Example](https://xuyfx.csb.app/) -  [Code Sandbox](https://codesandbox.io/s/svelte-fluid-header-demo-xuyfx?view=preview)
+[Example](https://xuyfx.csb.app/) |  [Code Sandbox](https://codesandbox.io/s/svelte-fluid-header-demo-xuyfx?view=preview)
 
 ## Install
 
@@ -49,7 +51,7 @@ The `right` slot goes into the right side of the header, usually for a horizonta
 
 #### `drawer`
 
-The `drawer` slot goes below the header, usually to place a vertical menu. It can be toggled into view (with a customizable animation).
+The `drawer` slot goes below the header, usually to place a vertical menu. It can be toggled into view (with a customizable slide animation).
 
 *It is hidden on larger screens.*
 
@@ -57,9 +59,9 @@ The `drawer` slot goes below the header, usually to place a vertical menu. It ca
 
 The `right-collapsed` slot goes to the right of the header on smaller screens, usually for a hamburger button to reveal the drawer.
 
-It is optional as `svelte-fluid-header` provides a default slot including hamburger and close buttons (which you can style). See the Bind section below to create a custom button.
+It is optional as `svelte-fluid-header` provides a default slot (including hamburger and close buttons, which may be styled. See the Binding section below to create a custom button.
 
-*It is hidden on larger screens.*
+*`right-collapsed` is hidden on larger screens.*
 
 ## Props
 
@@ -150,7 +152,7 @@ When the drawer closes:
 
 ```
 
-## Bind
+## Binding
 
 You can bind to the `toggleDrawer` function of your `svelte-fluid-header` component. This is especially handy if you implement your own toggle button:
 
