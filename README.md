@@ -20,20 +20,22 @@ On **smaller screens**, use a horizontal menu inside your header. On **larger sc
 
 ```html
 <script>
-  import Header from "svelte-fluid-header"
+  import Fluid from "svelte-fluid-header"
 </script>
 
-<Header>
-  <div slot="left">
-    My Header Title
-  </div>
-  <div slot="right">
-    My Horizontal Menu
-   </div>
-   <div slot="drawer">
-     My Vertical Menu
-   </div>
-</Header>
+<header>
+  <Fluid>
+    <div slot="left">
+      My Header Title
+    </div>
+    <div slot="right">
+      My Horizontal Menu
+    </div>
+     <div slot="drawer">
+       My Vertical Menu
+     </div>
+  </Fluid>
+</head
 
 ```
 
@@ -81,76 +83,46 @@ Possible values are:
 The duration of the drawer slider animation in milliseconds.
 The default is `200`.
 
-#### `as`
-
-The HTML tag that wraps the component.
-Possible values are `header`, `section`, `div`.
-The default is `div`.
-
 ## Styling
 
 Slots give you control of your content and your style.
 
-To style the container element of the header, you can hook into the `fluid-header-container` class. To style the default button, there is `fluid-header-button`;
+To style the default button, you can hook into the `svelte-fluid-header--button` class;
 
 ```html
 <style>
-  :global(.fluid-header-container) {
-    background-color: lightblue;
-    padding: 10px;
-  }
-  :global(.fluid-header-button) {
-    font-size: 1.1rem;
-  }
-</style>
-```
-
-You can replace the name of these classes via the `containerClass` and `defaultButtonClass` props;
-
-```html
-<style>
-  :global(.my-header) {
-    background-color: lightblue;
-    padding: 10px;
+  :global(.svelte-fluid-header--button) {
+    color: grey
   }
 </style>
 
-<Header containerClass="my-header">
-  <!-- slots -->
-</Header>
+Some CSS properties such as `background-color` will need an `!important` flag.
 
 ```
+
 ## Events
 
-Two events are emitted from the component:
+Two events are emitted from the component when the drawer is toggled, `open` and `close`:
 
 #### `open`
 
 When the drawer opens:
 
 ```html
-<Header
+<Fluid
   on:open={() => {
     console.log('drawer will open');
   }}
-  <!-- slots -->
-</Header>
-
-```
-
-#### `close`
-
-When the drawer closes:
-
-```html
-<Header
+  <FluidHeader
   on:close={() => {
     console.log('drawer will close');
   }}
   <!-- slots -->
-</Header>
+</Fluid>
 
 ```
+
+
 
 ## Binding
 
@@ -164,12 +136,12 @@ You can bind to the `toggleDrawer` function of your `svelte-fluid-header` compon
   };
 </script>
 
-<Header bind:toggleDrawer>
+<Fluid bind:toggleDrawer>
   <!-- other slots -->
   <div slot="right-collapsed">
     <button on:click={handleClick}>Toggle</button>
   </div>
-</Header>
+</Fluid>
 
 ```
 
@@ -179,6 +151,7 @@ All the options available:
 
 ```html
 <script>
+  import Fluid from 'svelte-fluid-header';
   let toggleDrawer;
   const handleClick = () => {
     toggleDrawer();
@@ -186,27 +159,27 @@ All the options available:
 </script>
 
 <style>
-  :global(.fluid-header-container) {
-    background-color: lightblue;
-    padding: 10px;
+  :global(.svelte-fluid-header--button) {
+    color: grey
   }
-  :global(.fluid-header-button:hover) {
-    font-weight: bold;
+  :global(.svelte-fluid-header--button:hover) {
+    color: grey
   }
 </style>
 
-<Header
-  as='header'
-  breakpoint='md'
-  duration={250}
-  bind:toggleDrawer
-  on:open={ () => {} }
-  on:close={ ()=> {} }>
-  <div slot="left"><h1>My app</h1></div>
-  <div slot="right">My Horizontal Menu</div>
-  <div slot="drawer">My Vertical Menu</div>
-  <div slot="right-collapsed">
-    <button on:click={handleClick}>Toggle</button>
-  </div>
-</Header>
+<header>
+  <FluidHeader
+    breakpoint='md'
+    duration={250}
+    bind:toggleDrawer
+    on:open={ () => {} }
+    on:close={ ()=> {} }>
+    <div slot="left"><h1>My app</h1></div>
+    <div slot="right">My Horizontal Menu</div>
+    <div slot="drawer">My Vertical Menu</div>
+    <div slot="right-collapsed">
+      <button on:click={handleClick}>Toggle</button>
+    </div>
+  </FluidHeader>
+</header>
 ```
