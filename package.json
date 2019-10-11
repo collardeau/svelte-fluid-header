@@ -31,7 +31,7 @@
     "index.js"
   ],
   "description": "A base for building shareable Svelte components that includes [tailwindcss](https://tailwindcss.com/). Clone it with [degit](https://github.com/Rich-Harris/degit):",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/collardeau/svelte-fluid-header.git"
