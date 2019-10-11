@@ -93,7 +93,9 @@
     </slot>
   </div>
   {#if drawerIsOpen}
-    <div transition:slide={{ duration }}>
+    <div
+      transition:slide={{ duration }}
+      style="position: absolute; left: 0; width: 100vw;">
       <slot name="drawer">drawer</slot>
     </div>
   {/if}
