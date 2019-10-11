@@ -59,7 +59,7 @@ The `drawer` slot goes below the header, usually to place a vertical menu. It ca
 
 The `right-collapsed` slot goes to the right of the header on smaller screens, usually for a hamburger button to reveal the drawer.
 
-It is optional as `svelte-fluid-header` provides a default slot (including hamburger and close buttons, which may be styled. See the Binding section below to create a custom button.
+It is optional as `svelte-fluid-header` provides a default slot (including hamburger and close buttons, which may be styled). See the Binding section below to create a custom button.
 
 *`right-collapsed` is hidden on larger screens.*
 
