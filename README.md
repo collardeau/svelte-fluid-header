@@ -4,9 +4,9 @@
 
 On **smaller screens**, use a horizontal menu inside your header. On **larger screens**, replace it for a collapsible vertical menu.
 
-`svelte-fluid-header` has **no dependencies**.
-
 ![](http://g.recordit.co/StDfeVYJRp.gif)
+
+`svelte-fluid-header` has **no production dependencies**.
 
 # Demo
 
@@ -38,6 +38,8 @@ On **smaller screens**, use a horizontal menu inside your header. On **larger sc
 </head
 
 ```
+
+Make sure to wrap your `<Fluid> ` component in another HTML tag (as in the `<header>` in the example above).
 
 ## Slots
 
@@ -95,34 +97,8 @@ To style the default button, you can hook into the `svelte-fluid-header--button`
     color: grey
   }
 </style>
-
-Some CSS properties such as `background-color` will need an `!important` flag.
-
 ```
-
-## Events
-
-Two events are emitted from the component when the drawer is toggled, `open` and `close`:
-
-#### `open`
-
-When the drawer opens:
-
-```html
-<Fluid
-  on:open={() => {
-    console.log('drawer will open');
-  }}
-  <FluidHeader
-  on:close={() => {
-    console.log('drawer will close');
-  }}
-  <!-- slots -->
-</Fluid>
-
-```
-
-
+A few CSS properties such as `background-color` will need an `!important` flag.
 
 ## Binding
 
@@ -141,6 +117,24 @@ You can bind to the `toggleDrawer` function of your `svelte-fluid-header` compon
   <div slot="right-collapsed">
     <button on:click={handleClick}>Toggle</button>
   </div>
+</Fluid>
+
+```
+
+## Events
+
+Two events are emitted from the component when the drawer is toggled, `open` and `close`:
+
+```html
+<Fluid
+  on:open={() => {
+    console.log('drawer will open');
+  }}
+  <FluidHeader
+  on:close={() => {
+    console.log('drawer will close');
+  }}
+  <!-- slots -->
 </Fluid>
 
 ```
